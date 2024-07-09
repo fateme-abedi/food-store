@@ -6,7 +6,11 @@ interface FoodItemProps {
 }
 
 const FoodCard: React.FC<FoodItemProps> = ({food}) => {
-    const addToCart = useCartStore(state => state.addToCart)
+    const addToCart = useCartStore(state => state.addToCart);
+    const handleAddToCart = () => {
+      addToCart(food);
+      console.log('Cart:', useCartStore.getState().cart);
+    };
 
     return (
         <div key={food.id} 
@@ -19,7 +23,7 @@ const FoodCard: React.FC<FoodItemProps> = ({food}) => {
               <p className="text-gray-400 mb-2">{food.description}</p>
               <p className="text-yellow-400 font-bold mb-4">${food.price}</p>
               <button 
-                onClick={() => addToCart(food)} 
+                onClick={() => handleAddToCart()} 
                 className="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 transition duration-300"
               >
                 Add to Cart

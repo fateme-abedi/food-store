@@ -1,6 +1,8 @@
 import React, {useState} from "react"
 import { FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa';
 import { useCartStore } from "../store/shopStore";
+import { Link } from 'react-router-dom';
+
 const Header :React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const cart=useCartStore(state => state.cart) 
@@ -23,14 +25,14 @@ console.log('header:' + cart.length);
               <a href="/shop" className="hover:text-yellow-500">Shop</a>
             </nav>
 
-            <a href="/cart" className="relative ml-auto mr-4 hover:text-yellow-500">
+            <Link to="/cart" className="relative ml-auto mr-4 hover:text-yellow-500">
                    <FaShoppingCart size={34}/>
                    {cart.length > 0 && <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm">
                      {quantityTotal}
                    </span>
                    }
-                </a>
-            
+            </Link>
+                
             <div className="md:hidden flex items-center">
                 <button onClick={toggleMenu}>
                     {isOpen ? <FaTimes size={24}/> : <FaBars size={24}/>}

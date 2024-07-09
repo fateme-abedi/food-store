@@ -5,17 +5,17 @@ const ShoppingCart: React.FC = () => {
     const cart = useCartStore(state => state.cart);
     const totoal = useCartStore(state => state.total);
     const removeFromCart = useCartStore(state => state.removeFromCart);
-    console.log("shcart:" + JSON.stringify(cart));
     
-console.log(cart.length);
+    
+console.log(useCartStore.getState().cart.length);
 
     return (
-        <div className='p-8 bg-gray-900 rounded-lg shadow-lg'>
+        <div className='p-8  rounded-lg shadow-lg'>
             <h1 className="text-2xl font-semibold mb-6">Shopping Cart</h1>
             {
-                cart.length === 0 ? <p>Your cart is empty</p> : (
+                useCartStore.getState().cart.length === 0 ? <p>Your cart is empty</p> : (
                     <div className="cart-items">
-                       {cart.map(item => (
+                       {useCartStore.getState().cart.map(item => (
                         <div key={item.id} className="flex justify-between items-center mb-4">
                           <h3  className="text-lg">{item.name}</h3>
                           <p className="text-gray-600">Quantity: {item.quantity}</p>

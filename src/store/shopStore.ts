@@ -30,7 +30,6 @@ export const useCartStore = create<CartState>()((set, get) => ({
       console.log("store: " + cart.length);
       
       const existingItem = cart.find(cartItem => cartItem.id === item.id);
-      console.log("exist" + Boolean(existingItem));
       
       if(existingItem) {
         set({

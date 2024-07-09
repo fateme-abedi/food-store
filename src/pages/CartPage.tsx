@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Cart from '../components/ShoppindCart';
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 const CartPage: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const CartPage: React.FC = () => {
             </button>
         </div>
       </main>
-      {/* <Footer /> */}
+      <Footer/>
     </div>
   );
 };

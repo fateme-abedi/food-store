@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import SubmitDelivey from '../components/SubmitDelivery';
 import DeliveryMap from '../components/DeliveryMap';
+import Footer from '../components/Footer';
 
 const SubmitPage: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const SubmitPage: React.FC = () => {
             </button>
         
       </main>
-      {/* <Footer /> */}
+      <Footer/>
     </div>
   );
 };

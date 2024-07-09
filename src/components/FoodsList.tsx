@@ -18,7 +18,7 @@ const foods: FoodItem[] = [
 
 const FoodsList:React.FC= () => {
     return (
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-6 px-8 pt-6'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-6 px-8 pt-6 mb-20'>
             {foods.map(food => (
                 <FoodCard 
                  key = {food.id}

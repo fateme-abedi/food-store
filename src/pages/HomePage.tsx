@@ -1,12 +1,13 @@
 import Header from "../components/Header";
 import heroImg from '../assets/hero.png'
 import FoodsList from "../components/FoodsList";
+import Footer from "../components/Footer";
 
 
 
 const HomePage: React.FC = () => { 
     return(
-        <div className="min-h-screen">
+        <div className="min-h-screen ">
             <Header/>
             <main className="mx-auto px-4 py-8">
                 <section className="flex flex-col lg:flex-row items-center justify-between mb-16 h-[70%]">
@@ -24,16 +25,8 @@ const HomePage: React.FC = () => {
                     <h2 className="text-3xl font-bold text-center mb-8  text-white">Our Foods</h2>
                     <FoodsList/>
                 </section>
-                {/* <section className="container mx-auto mt-8 px-8">
-                    <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
-   
-                        <div className="lg:w-1/3 p-4  shadow-md rounded-lg">
-                          <h2 className="text-xl font-semibold mb-4">Shopping Cart</h2>
-                          <ShoppingCart/>
-                        </div>
-                    </div>
-                </section> */}
             </main>
+            <Footer/>
         </div>
 
     )
